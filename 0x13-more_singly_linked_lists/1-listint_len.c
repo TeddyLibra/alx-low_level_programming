@@ -2,7 +2,7 @@
 
 /**
  * listint_len - it returns number of elements
- * @head_va: type listint_t to traverse
+ * @head_var: type listint_t to traverse
  *
  * Return: it rerutn number of nodes
  */
