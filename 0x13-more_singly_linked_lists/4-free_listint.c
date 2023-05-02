@@ -1,17 +1,17 @@
 #include "lists.h"
 
 /**
- * free_listint - it deallocates linked list
- * @head_v: listint_t list 2b deallocates  
+ * free_listint - frees a linked list
+ * @head: listint_t list to be freed
  */
-void free_listint(listint_t *head_v)
+void free_listint(listint_t *head)
 {
-	listint_t *temporary_v;
+	listint_t *temp;
 
-	while (head_v)
+	while (head)
 	{
-		temporay_v = head_v->next;
-		free(head_v);
-		head_v = temporary_v;
+		temp = head->next;
+		free(head);
+		head = temp;
 	}
 }
