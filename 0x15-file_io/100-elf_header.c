@@ -7,7 +7,7 @@
 #include <stdlib.h>
 
 void check_file_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
+void print_file_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
 void print_version(unsigned char *e_ident);
@@ -40,22 +40,21 @@ void check_file_elf(unsigned char *e_ident)
 }
 
 /**
- * print_magic - Prints the magic numbers of an ELF header.
- * @e_ident: A pointer to an array containing the ELF magic numbers.
- *
- * Description: Magic numbers are separated by spaces.
+ * print_file_magic - Display d magic num
+ * @e_ident: A pointer vaiable
+ * Description: the num white space in between
  */
-void print_magic(unsigned char *e_ident)
+void print_file_magic(unsigned char *e_ident)
 {
-	int index;
+	int i_of;
 
 	printf("  Magic:   ");
 
-	for (index = 0; index < EI_NIDENT; index++)
+	for (i_of = 0; i_of < EI_NIDENT; i_of++)
 	{
-		printf("%02x", e_ident[index]);
+		printf("%02x", e_ident[i_of]);
 
-		if (index == EI_NIDENT - 1)
+		if (i_of == EI_NIDENT - 1)
 			printf("\n");
 		else
 			printf(" ");
@@ -298,7 +297,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 
 	check_file_elf(header->e_ident);
 	printf("ELF Header:\n");
-	print_magic(header->e_ident);
+	print_file_magic(header->e_ident);
 	print_class(header->e_ident);
 	print_data(header->e_ident);
 	print_version(header->e_ident);
