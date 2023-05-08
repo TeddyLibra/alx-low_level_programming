@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void check_elf(unsigned char *e_ident);
+void check_file_elf(unsigned char *e_identfication);
 void print_magic(unsigned char *e_ident);
 void print_class(unsigned char *e_ident);
 void print_data(unsigned char *e_ident);
@@ -18,21 +18,21 @@ void print_entry(unsigned long int e_entry, unsigned char *e_ident);
 void close_elf(int elf);
 
 /**
- * check_elf - Checks if a file is an ELF file.
- * @e_ident: A pointer to an array containing the ELF magic numbers.
+ * check_file_elf - a function that make sure the file is an ELF file.
+ * @e_identfication: A pointer 2ELF magic num
  *
- * Description: If the file is not an ELF file - exit code 98.
+ * Description: exit code 98 if the file is not ELF
  */
-void check_elf(unsigned char *e_ident)
+void check_file_elf(unsigned char *e_identfication)
 {
-	int index;
+	int i_of;
 
-	for (index = 0; index < 4; index++)
+	for (i_of = 0; i_of < 4; i_of++)
 	{
-		if (e_ident[index] != 127 &&
-		    e_ident[index] != 'E' &&
-		    e_ident[index] != 'L' &&
-		    e_ident[index] != 'F')
+		if (e_identfication[i_of] != 127 &&
+		    e_identfication[i_of] != 'E' &&
+		    e_identfication[i_of] != 'L' &&
+		    e_identfication[i_of] != 'F')
 		{
 			dprintf(STDERR_FILENO, "Error: Not an ELF file\n");
 			exit(98);
@@ -297,7 +297,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	check_elf(header->e_ident);
+	check_file_elf(header->e_identfication);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
 	print_class(header->e_ident);
