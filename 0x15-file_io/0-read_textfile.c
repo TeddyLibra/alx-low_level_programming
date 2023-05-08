@@ -7,7 +7,7 @@
  * @filename: the file that will be read
  * @letters: num of letters 2b read
  * Return: actual number of letters it could read and print
- * if the file can not be opened or read,Null, write fail or 
+ * if the file can not be opened or read,Null, write fail or
  * does not write the expexted amount of bytes, retun 0
  */
 ssize_t read_textfile(const char *filename, size_t letters)
