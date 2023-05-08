@@ -38,7 +38,7 @@ void close_content_file(int file_descriptor)
 
 	if (close_f == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file_descriptor %d\n", file_descriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_descriptor);
 		exit(100);
 	}
 }
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cpy file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
