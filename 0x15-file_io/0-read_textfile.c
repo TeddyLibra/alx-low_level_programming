@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (file_descriptor == -1)
 		return (0);
 	file_content = malloc(sizeof(char) * letters);
-	store_num_byte = read(file_descriptor, buf, letters);
+	store_num_byte = read(file_descriptor, file_content, letters);
 	byte_written = write(STDOUT_FILENO, file_content, store_num_byte);
 
 	free(file_content);
