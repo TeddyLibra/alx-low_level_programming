@@ -38,7 +38,7 @@ void close_content_file(int file_descriptor)
 
 	if (close_f == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_descriptor);
+		dprintf(STDERR_FILENO, "Error: Can't close file_descriptor %d\n", file_descriptor);
 		exit(100);
 	}
 }
@@ -47,11 +47,11 @@ void close_content_file(int file_descriptor)
  * main - a function that cp d contents of a file 2another
  * @argc: D arguments
  * @argv: point to the argmnt.
- * Return: 0 (success)
+ * Return: 0 success
  * Description: exit code 97 if its correct
- * exit code 98 if it\'s not read.
- * exit code 99 if can\'t b crea or wri
- * exit code 100 if it isn't closed
+ * exit code 98 if its not read.
+ * exit code 99 if cant b crea or wri
+ * exit code 100 if it isnt closed
  */
 int main(int argc, char *argv[])
 {
@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cpy file_from file_to\n");
 		exit(97);
 	}
 
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 
-		r = read(frm_f, content_file, 1024);
+		read_f = read(frm_f, content_file, 1024);
 		to_f = open(argv[2], O_WRONLY | O_APPEND);
 
 	} while (read_f > 0);
