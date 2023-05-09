@@ -178,7 +178,7 @@ void print_file_osabi(unsigned char *e_ident)
  * print_file_abi - Display d ABI
  * @e_ident: the pointer
  */
-void print_abi(unsigned char *e_ident)
+void print_file_abi(unsigned char *e_ident)
 {
 	printf("  ABI Version:                       %d\n",
 	       e_ident[EI_ABIVERSION]);
