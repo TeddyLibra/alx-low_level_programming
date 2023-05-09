@@ -265,7 +265,7 @@ void close_file_elf(int elf)
  */
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-	Elf64_Ehdr *header;
+	Elf64_Ehdr *header_f;
 	int open_f, read_f;
 
 	open_f = open(argv[1], O_RDONLY);
