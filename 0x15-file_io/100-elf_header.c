@@ -14,7 +14,7 @@ void print_file_version(unsigned char *e_identfication);
 void print_file_abi(unsigned char *e_identfication);
 void print_file_osabi(unsigned char *e_identfication);
 void print_file_type(unsigned int e_type, unsigned char *e_identfication);
-void print_file_entry(unsigned long int e_entry, unsigned char *e_identfication);
+void print_file_entry(unsigned long int e_entry, unsigned char *e_identfi);
 void close_file_elf(int elf_c);
 
 /**
@@ -221,20 +221,20 @@ void print_file_type(unsigned int e_type, unsigned char *e_identfication)
 /**
  * print_file_entry - Display d entry
  * @e_entry: D address
- * @e_identfication: the pointer
+ * @e_identfi: the pointer
  */
-void print_file_entry(unsigned long int e_entry, unsigned char *e_identfication)
+void print_file_entry(unsigned long int e_entry, unsigned char *e_identfi)
 {
 	printf("  Entry point address:               ");
 
-	if (e_identfication[EI_DATA] == ELFDATA2MSB)
+	if (e_identfi[EI_DATA] == ELFDATA2MSB)
 	{
 		e_entry = ((e_entry << 8) & 0xFF00FF00) |
 			  ((e_entry >> 8) & 0xFF00FF);
 		e_entry = (e_entry << 16) | (e_entry >> 16);
 	}
 
-	if (e_identfication[EI_CLASS] == ELFCLASS32)
+	if (e_identfi[EI_CLASS] == ELFCLASS32)
 		printf("%#x\n", (unsigned int)e_entry);
 
 	else
@@ -299,7 +299,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 	print_file_osabi(header_f->e_identfication);
 	print_file_abi(header_f->e_identfication);
 	print_file_type(header_f->e_type, header_f->e_identfication);
-	print_file_entry(header_f->e_entry, header_f->e_identfication);
+	print_file_entry(header_f->e_entry, header_f->e_identfi);
 
 	free(header_f);
 	close_file_elf(open_f);
