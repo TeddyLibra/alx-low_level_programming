@@ -19,7 +19,7 @@ void close_file_elf(int elf_c);
 
 /**
  * check_file_elf - a function that make sure the file is an ELF file.
- * @e_ident: A pointer 2ELF magic num
+ * @e_identfication: A pointer 2ELF magic num
  * Description: exit code 98 if the file is not ELF
  */
 void check_file_elf(unsigned char *e_identfication)
@@ -41,7 +41,7 @@ void check_file_elf(unsigned char *e_identfication)
 
 /**
  * print_file_magic - Display d magic num
- * @e_ident: A pointer vaiable
+ * @e_identfication: A pointer vaiable
  * Description: the num white space in between
  */
 void print_file_magic(unsigned char *e_identfication)
@@ -63,7 +63,7 @@ void print_file_magic(unsigned char *e_identfication)
 
 /**
  * print_file_class - Display d class
- * @e_ident: A pointer variable
+ * @e_identfication: A pointer variable
  */
 void print_file_class(unsigned char *e_identfication)
 {
@@ -87,7 +87,7 @@ void print_file_class(unsigned char *e_identfication)
 
 /**
  * print_file_data - dispaly d data
- * @e_ident: the pointer
+ * @e_identfication: the pointer
  */
 void print_file_data(unsigned char *e_identfication)
 {
@@ -111,7 +111,7 @@ void print_file_data(unsigned char *e_identfication)
 
 /**
  * print_file_version - Display d version
- * @e_ident: d pointer
+ * @e_identfication: d pointer
  */
 void print_file_version(unsigned char *e_identfication)
 {
@@ -131,7 +131,7 @@ void print_file_version(unsigned char *e_identfication)
 
 /**
  * print_file_osabi - Display d OS/ABI
- * @e_ident: the pointer
+ * @e_identfication: the pointer
  */
 void print_file_osabi(unsigned char *e_identfication)
 {
@@ -176,7 +176,7 @@ void print_file_osabi(unsigned char *e_identfication)
 
 /**
  * print_file_abi - Display d ABI
- * @e_ident: the pointer
+ * @e_identfication: the pointer
  */
 void print_file_abi(unsigned char *e_identfication)
 {
@@ -187,7 +187,7 @@ void print_file_abi(unsigned char *e_identfication)
 /**
  * print_file_type - Display d type
  * @e_type: D type.
- * @e_ident: the pointer
+ * @e_identfication: the pointer
  */
 void print_file_type(unsigned int e_type, unsigned char *e_identfication)
 {
@@ -221,7 +221,7 @@ void print_file_type(unsigned int e_type, unsigned char *e_identfication)
 /**
  * print_file_entry - Display d entry
  * @e_entry: D address
- * @e_ident: the pointer
+ * @e_identfication: the pointer
  */
 void print_file_entry(unsigned long int e_entry, unsigned char *e_identfication)
 {
@@ -243,7 +243,7 @@ void print_file_entry(unsigned long int e_entry, unsigned char *e_identfication)
 
 /**
  * close_file_elf - ending the file.
- * @elf: D fd
+ * @elf_c: D fd
  * Description: exit code 98 if not closed
  */
 void close_file_elf(int elf_c)
